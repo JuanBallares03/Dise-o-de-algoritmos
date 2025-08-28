@@ -42,7 +42,7 @@ def bubble_sort(lista):
     return lista
 
 Lista_ordenada = bubble_sort(Lista_separada)
-print(Lista_ordenada)
+#print(Lista_ordenada)
 
 def Agrupar(lista):
     Corazones = []
@@ -62,9 +62,11 @@ def Agrupar(lista):
     return Corazones,Picas,Diamantes,Treboles
 
 Lista_Final = Agrupar(Lista_ordenada)
-print(Lista_Final)
+#print(Lista_Final)
 Corazones, Picas, Diamantes, Treboles = Agrupar(Lista_ordenada)
-print("Corazones:", Corazones)
-print("Picas:", Picas)
-print("Diamantes:", Diamantes)
-print("Tréboles:", Treboles)
+ListaDefinitiva = Corazones + Picas + Diamantes + Treboles
+#print("Corazones:", Corazones)
+#print("Picas:", Picas)
+#print("Diamantes:", Diamantes)
+#print("Tréboles:", Treboles)
+print("La lista ordenada:", ListaDefinitiva)
