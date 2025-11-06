@@ -45,11 +45,22 @@ Furgoneta5 = Furgoneta("Chevrolet", "S10", 1050, ["Ruta9", "Ruta10"], 8, 500)
 
 #Inicializamos el grafo y agregamos un nodo
 GrafoRutas = Grafo()
-nombre_nodo = input("Ingrese el nombre del nodo: ")
-GrafoRutas.agregar_nodo(nombre_nodo)
-nodo_obtenido = GrafoRutas.nodos[nombre_nodo]
 
-GrafoRutas.agregar_Adyacente("Bogota","Medellin",10,5)
-print(f"Nodo agregado: {nodo_obtenido.nombre}")
+cantidad = int(input("¿Cuántos nodos (ciudades) desea agregar?: "))
 
+for i in range(cantidad):
+    nombre_nodo = input(f"Ingrese el nombre del nodo {i+1}: ")
+    GrafoRutas.agregar_nodo(nombre_nodo)
 
+print("\nNodos agregados correctamente:")
+for nombre in GrafoRutas.nodos:
+    print(f"- {nombre}")
+
+# Agregar una conexión (arista) entre dos nodos ya creados
+origen = input("Ingrese el nombre del nodo origen: ")
+destino = input("Ingrese el nombre del nodo destino: ")
+distancia = int(input("Ingrese la distancia entre los nodos: "))
+tiempo = int(input("Ingrese el tiempo estimado: "))
+
+GrafoRutas.agregar_Adyacente(origen, destino, distancia, tiempo)
+print(f"\nConexión agregada entre {origen} y {destino}.")
